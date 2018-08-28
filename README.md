@@ -1,5 +1,7 @@
 # Input Sequence Proof of Concept
 
+**NOTE: This is a work in progress.**
+
 ## Get Started
 This proof of concept is built with [Phaser 3](https://phaser.io/phaser3) and requires [Node.js](https://nodejs.org)
 

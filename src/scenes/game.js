@@ -3,6 +3,8 @@ import Player from '../objects/player'
 export default class Game extends Phaser.Scene {
     constructor() {
         super('game')
+
+        this.player
     }
 
     preload() {}
@@ -21,8 +23,15 @@ export default class Game extends Phaser.Scene {
         }
 
         this.anims.create(config)
-        let player = new Player(this, 100, 100, 'engineer', 0)
-        this.add.existing(player)
-        player.anims.play('engineer_walk_down')
+        
+        this.player = new Player(this, 100, 100, 'engineer', 0)
+        this.player.create()
+
+        this.add.existing(this.player)
+        this.player.anims.play('engineer_walk_down')
+    }
+
+    update() {
+        this.player.update()
     }
 }
