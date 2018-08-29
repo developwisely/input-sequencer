@@ -4,6 +4,7 @@ const FACING_DIRECTION = {
 }
 
 import PlayerInputController from '../controllers/player-input-controller'
+import ActionsController from '../controllers/actions-controller'
 import playerData from '../data/test-player'
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -15,6 +16,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.state
         this.keys
         this.playerInputController
+        this.actionsController
     }
 
     create() {
@@ -29,6 +31,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
         // Player Inputs
         this.playerInputController = new PlayerInputController(this, this.keys)
         this.playerInputController.init()
+
+        // Player Action Controller
+        this.actionsController = new ActionsController(this)
+        this.actionsController.init()
 
         console.log('Created player')
     }

@@ -4,43 +4,49 @@ export default {
     // NOTE: Priority is set via order
     moves: [
         {
-            name: 'Fireball - SPECIAL',
+            name: 'Hadouken',
+            type: 'Special',
             sequence: [
                 ['DIRECTIONAL_DOWN'],
                 ['DIRECTIONAL_DOWNFORWARD'],
                 ['DIRECTIONAL_FORWARD'],
-                ['LP']
+                ['BUTTON_LP']
             ]
         },
         {
-            name: 'Overhead Punch - COMMAND',
+            name: 'Overhead',
+            type: 'Command',
             sequence: [
                 ['DIRECTIONAL_BACK', 'BUTTON_LP']
             ]
         },
         {
             name: 'Punch',
+            type: 'Regular',
             sequence: [
                 ['BUTTON_LP']
             ]
         },
         {
-            name: 'Spin Kick - SPECIAL',
+            name: 'Tatsumaki',
+            type: 'Special',
             sequence: [
                 ['DIRECTIONAL_DOWN'],
                 ['DIRECTIONAL_DOWNBACK'],
                 ['DIRECTIONAL_BACK'],
-                ['LK']
+                ['BUTTON_LK']
             ]
         },
         {
-            name: 'Hop Kick - COMMAND',
+            name: 'Hop Kick',
+            type: 'Command',
             sequence: [
                 ['DIRECTIONAL_FORWARD', 'BUTTON_LK']
             ]
         },
         {
             name: 'Kick',
+            type: 'Regular',
             sequence: [
                 ['BUTTON_LK']
             ]
