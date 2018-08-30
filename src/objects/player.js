@@ -22,6 +22,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
     create() {
         this.state = {
             isFacing: FACING_DIRECTION.RIGHT,  // Player 2 should face left by default
+            isGrounded: true,
+            isCrouching: false,
+            isMoving: false,
+            isPerformingAction: false
         }
 
         // TODO: this needs to be set PER PLAYER (as different keys)
@@ -36,10 +40,26 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.actionsController = new ActionsController(this)
         this.actionsController.init()
 
+        // Check animation completion
+        this.on('animationcomplete', this.animComplete, this)
+
+
         console.log('Created player')
     }
 
     update() {
         this.playerInputController.update()
+    }
+
+    animComplete(animation, frame) {
+        console.log(animation)
+
+        if (animation.key == 'idle') return
+
+        this.state.isPerformingAction = false
+        this.anims.play('idle')
+        // if (animation.key == 'idle') {
+        //     this.anims.play('idle')
+        // }
     }
 }

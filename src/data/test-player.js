@@ -11,7 +11,15 @@ export default {
                 ['DIRECTIONAL_DOWNFORWARD'],
                 ['DIRECTIONAL_FORWARD'],
                 ['BUTTON_LP']
-            ]
+            ],
+            data: {
+                isCancelable: true, // only cancelable after first active frame on hit/block
+                frames: 10,
+                animation: {
+                    name: 'hadouken',
+                    frames: [5, 6, 7, 8]
+                }
+            }
         },
         {
             name: 'Overhead',
@@ -25,7 +33,15 @@ export default {
             type: 'Regular',
             sequence: [
                 ['BUTTON_LP']
-            ]
+            ],
+            data: {
+                isCancelable: true, // only cancelable after first active frame on hit/block
+                frames: 10,
+                animation: {
+                    name: 'punch',
+                    frames: [3, 4, 3]
+                }
+            }
         },
         {
             name: 'Tatsumaki',

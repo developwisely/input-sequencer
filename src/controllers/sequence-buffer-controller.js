@@ -86,7 +86,7 @@ export default class SequenceBufferController {
     }
 
     firePlayerAction(action) {
-        this.player.emit(action.name, this.player)
+        this.player.emit(action.name, action, this.player)
     }
 
     resetStack() {
